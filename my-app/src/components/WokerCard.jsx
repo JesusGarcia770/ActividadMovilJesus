@@ -1,22 +1,18 @@
-import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-const PokemonCard = ({ pokemon }) => {
+const WorkerCard = ({ worker }) => {
   //Obtener el número del Pokémon a partir de su URL
-  const pokemonNumber = pokemon.url.split("/").filter(Boolean).pop();
+  const pokemonNumber = worker.url.split("/").filter(Boolean).pop();
 
   return (
     <View style={styles.card}>
-      <View style={styles.imageContainer}>
-        <Image source={{ uri: pokemon.image }} style={styles.image} />
-      </View>
-      <Text style={styles.number}>#{pokemonNumber}</Text>
-      <Text style={styles.title}>{pokemon.name}</Text>
-      <Text style={styles.text}>{pokemon.description}</Text>
+      <Text style={styles.name}>#{worker.name}</Text>
+      <Text style={styles.work}>{worker.work}</Text>
+      <Text style={styles.work_since}>{worker.work_since}</Text>
     </View>
   );
 };
-export default PokemonCard;
+export default WorkerCard;
 
 const styles = StyleSheet.create({
   card: {
